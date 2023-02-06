@@ -1,0 +1,140 @@
+﻿<Window x:Class="KMS_Altenburger_Andre.TransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KMS_Altenburger_Andre"
+        mc:Ignorable="d"
+        Title="TransactionWindow" 
+        Height="457" 
+        Width="684"
+        Closing="Window_Closing"
+        ResizeMode="NoResize">
+
+    <Grid Margin="0,0,0,-6">
+
+        <Label x:Name="accountBalance_lbl" 
+               Content="Account Balance:" 
+               Margin="461,132,0,0" 
+               HorizontalAlignment="Left" 
+               Width="111" 
+               Height="25" 
+               VerticalAlignment="Top"/>
+
+        <Label x:Name="showAccountBalance_lbl" 
+               Content="" 
+               Margin="572,132,0,0" 
+               HorizontalAlignment="Left" 
+               Width="102" 
+               Height="25" 
+               VerticalAlignment="Top"/>
+
+        <Label x:Name="recievedMoney_lbl" 
+               Content="Recieved Money:" 
+               Margin="461,74,0,0" 
+               HorizontalAlignment="Left" 
+               Width="111" 
+               Height="29" 
+               VerticalAlignment="Top"/>
+
+        <Label x:Name="showRecievedMoney_lbl" 
+               Content="" 
+               Margin="572,74,0,0" 
+               HorizontalAlignment="Left" 
+               Width="102" 
+               Height="29" 
+               VerticalAlignment="Top"/>
+
+        <Label x:Name="sendMoney_lbl" 
+               Content="Send Money:" 
+               Margin="461,102,0,0" 
+               Height="30" 
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Left" 
+               Width="111"/>
+
+        <Label x:Name="showSendMoney_lbl" 
+               Content="" 
+               Margin="572,100,0,0" 
+               HorizontalAlignment="Left" 
+               Width="102" 
+               Height="32" 
+               VerticalAlignment="Top"/>
+
+        <ListView x:Name="recievingIbans_ListView" 
+                  Margin="0,36,247,251">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="RecievingIBAN" 
+                                    x:Name="Recievingiban" 
+                                    Width="100" 
+                                    DisplayMemberBinding="{Binding Recievingiban1}"/>
+
+                    <GridViewColumn Header="TransmitterIBAN" 
+                                    Width="100" 
+                                    DisplayMemberBinding="{Binding Transmitteriban1}"/>
+
+                    <GridViewColumn Header="Purpose" 
+                                    Width="50" 
+                                    DisplayMemberBinding="{Binding Purpose1}"/>
+
+                    <GridViewColumn Header="Amount" 
+                                    Width="50" 
+                                    DisplayMemberBinding="{Binding Amount1}"/>
+
+                    <GridViewColumn Header="BookingDate" 
+                                    Width="90" 
+                                    DisplayMemberBinding="{Binding Bookingdate1}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name= "export_Btn"  
+                Content="Export" 
+                Margin="496,304,0,0" 
+                Click="SaveFilesButton_Click" 
+                Height="43" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Width="96"/>
+
+        <ListView x:Name="transmitterIbans_ListView" 
+                  Margin="0,226,247,22" 
+            >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="TransmitterIBAN" 
+                                    x:Name="Transmitteriban" 
+                                    Width="100" 
+                                    DisplayMemberBinding="{Binding Transmitteriban1}"/>
+
+                    <GridViewColumn Header="RecievingIBAN" 
+                                    Width="100" 
+                                    DisplayMemberBinding="{Binding Recievingiban1}"/>
+
+                    <GridViewColumn Header="Purpose" 
+                                    Width="50" 
+                                    DisplayMemberBinding="{Binding Purpose1}"/>
+
+                    <GridViewColumn Header="Amount" 
+                                    Width="50" 
+                                    DisplayMemberBinding="{Binding Amount1}"/>
+
+                    <GridViewColumn Header="BookingDate" 
+                                    Width="90" 
+                                    DisplayMemberBinding="{Binding Bookingdate1}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Send Money" 
+               Margin="10,196,566,191"/>
+
+        <Label Content="Recieved Money" 
+               Margin="10,6,545,381"/>
+
+    </Grid>
+</Window>
